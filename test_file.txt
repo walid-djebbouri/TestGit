@@ -6,4 +6,5 @@ no conflict
 pull test
 hello walid
 new conflict
+this is conflict
 ++++ new conflict
