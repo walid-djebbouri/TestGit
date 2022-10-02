@@ -4,3 +4,4 @@ new test
 main
 no conflict
 pull test
+new conflict
