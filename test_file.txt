@@ -9,3 +9,4 @@ new conflict
 this is conflict
 ++++ new conflict
 good job
+very good
