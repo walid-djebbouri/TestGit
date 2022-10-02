@@ -11,3 +11,4 @@ this is conflict
 good job
 very good
 changing in the second branch
+
