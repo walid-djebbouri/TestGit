@@ -6,4 +6,3 @@ no conflict
 pull test
 hello walid
 new conflict
-good job
