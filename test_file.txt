@@ -14,3 +14,4 @@ changing in the second branch
 changing in the second branch 22
 git pull origine second_branch
 get it from the second branch
+from the main
