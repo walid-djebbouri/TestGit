@@ -21,3 +21,5 @@ git fetch for the second branch
 for testing merge here i'm in the new branch
 
 <<<< new branch >>>>
+
+<<< new branch >>>
