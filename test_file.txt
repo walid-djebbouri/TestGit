@@ -20,4 +20,5 @@ git fetch for the second branch
 
 for testing merge here i'm in the new branch
 
-this is the second branch and we are testing the merge command line
+this is the second branch and we are te
+sting the merge command line
