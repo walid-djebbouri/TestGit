@@ -1,0 +1,160 @@
+<div class=" border-success" >
+
+  <div class="w-50 mx-auto p-2 border-success "  >
+    <form [formGroup] = "userForm"  >
+
+      <div class="form-group form-row mb-1 " >
+
+
+          <div class="col-xl6 col-lg-6 col-md-6 col-sm-12" >
+
+            <label for="nom" >Le Nom :</label>
+            <input
+              type="text"
+              id="nom"
+              class="form-control"
+              [ngClass]="{'is-invalid': userForm.controls.nom.errors && userForm.controls.nom.touched ,
+                          'is-valid': userForm.controls.nom.valid }"
+              formControlName="nom"
+              placeholder="Le Nom"
+            >
+          </div >
+
+          <div class="col-xl6 col-lg-6 col-md-6 col-sm-12">
+
+            <label for="prenom" >Le Prenom :</label>
+            <input
+              type="text"
+              class="form-control"
+              [ngClass]="{'is-invalid': userForm.controls.prenom.errors && userForm.controls.prenom.touched,
+                          'is-valid': userForm.controls.prenom.valid}"
+              id="prenom"
+              formControlName="prenom"
+              placeholder="Le Prenom" >
+
+          </div>
+
+      </div>
+
+      <div class="form-row" >
+        <div class="col-xl6 col-lg-6 col-md-6 col-sm-12"
+             *ngIf="userForm.controls.nom.invalid && ( userForm.controls.nom.dirty || userForm.controls.nom.touched )"
+        >
+          <small class="text-danger" *ngIf="userForm.get('nom').hasError('required')" >Le Nom est requis</small>
+          <small class="text-danger" *ngIf="userForm.get('nom').hasError('minlength')" >Le minLength du nom est invalid</small>
+          <small class="text-danger" *ngIf="userForm.get('nom').hasError('maxlength')" >Le maxLength du nom est invalid</small>
+
+        </div >
+
+        <div class="col-xl6 col-lg-6 col-md-6 col-sm-12"
+             *ngIf="userForm.controls['prenom'].invalid && ( userForm.controls['prenom'].dirty || userForm.controls['prenom'].touched )"
+        >
+
+          <small class="text-danger" *ngIf="userForm.get('prenom').hasError('required')" >Le Prenom est requis </small>
+          <small class="text-danger" *ngIf="userForm.controls.prenom.errors.minlength" > l'Age doit etre supèrieur  ans </small>
+          <small class="text-danger" *ngIf="userForm.get('prenom').hasError('maxlength')" >Le maxLength du prenom est invalid</small>
+
+        </div>
+      </div>
+
+
+      <div class="form-group form-row pb-0 mb-0 ">
+
+        <div class="col-xl6 col-lg-6 col-md-6 col-sm-12">
+          <label for="age" >L'age :</label>
+          <input type="number" class="form-control" [ngClass]="{'is-invalid': userForm.controls.age.errors && userForm.controls.age.touched }" id="age"  formControlName="age" placeholder="L Age" >
+
+        </div>
+
+        <div class="col-xl6 col-lg-6 col-md-6 col-sm-12">
+          <label for="genre" >Genre</label>
+          <select id="genre" class="form-control" [ngClass]="{'is-invalid': userForm.controls.genre.errors && userForm.controls.genre.touched }" formControlName="genre"  >
+            <option value="homme" >Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+
+        </div>
+
+      </div>
+
+       <div class="form-row" >
+          <div class="col-xl6 col-lg-6 col-md-6 col-sm-12">
+
+            <div *ngIf="userForm.controls['age'].invalid && (userForm.controls['age'].dirty || userForm.controls['age'].touched  )">
+              <small class="text-danger" *ngIf="userForm.get('age').hasError('required')" > l'Age est requis </small>
+              <small class="text-danger" *ngIf="userForm.get('age').hasError('min')" > l'Age doit etre supèrieur  ans </small>
+              <small class="text-danger" *ngIf="userForm.get('age').hasError('max')" > l'Age doit etre inférieur a 99 ans </small>
+
+            </div>
+          </div>
+
+         <div class="col-xl6 col-lg-6 col-md-6 col-sm-12" >
+
+            <div *ngIf="userForm.controls['genre'].invalid && (userForm.controls['genre'].dirty || userForm.controls['genre'].touched  )">
+              <small class="text-danger" > le genre est requis </small>
+            </div>
+
+          </div>
+
+       </div>
+
+
+
+      <div class="form-group form-row ">
+
+        <label for="email" >E Mail :</label>
+        <input type="text" class="form-control" [ngClass]="{'is-invalid': userForm.controls.email.errors && userForm.controls.email.touched }" id="email" formControlName="email" placeholder="E Mail"  >
+
+        <div *ngIf="userForm.controls['email'].invalid && ( userForm.controls['email'].dirty || userForm.controls['email'].touched)" >
+          <small class="text-danger" *ngIf="userForm.controls['email'].invalid"  > L'email est invalid </small>
+        </div>
+
+      </div>
+
+      <div formArrayName="phones" >
+        <label >Phone Number:</label>
+        <div *ngFor="let phone of phones.controls ; let i = index" >
+          <div class="form-group" [formGroup]="phone"  >
+            <div class="form-row" >
+              <div class="col-2 " >
+                <i class="delete-btn" (click)="deletePhoneNumber(i)">
+                  delete
+                </i>
+              </div>
+              <div class="col-10  " >
+                <input
+                  class="form-control"
+                  [ngClass]="{'is-invalid': phones.controls[i].get('phone').errors && phones.controls[i].get('phone').touched ,
+                              'is-valid': phones.controls[i].get('phone').valid && phones.controls[i].get('phone').touched }"
+                  type="text"
+                  formControlName="phone" >
+              </div>
+            </div>
+            <div>
+              <div class="col-2" >
+              </div>
+              <div class="col-10" *ngIf=" phones.controls[i].get('phone').invalid && phones.controls[i].get('phone').touched ">
+                <small class="text-danger" *ngIf="this.phones.controls[0].get('phone').errors.required" >The Number Phone is Required</small>
+                <small class="text-danger" *ngIf="this.phones.controls[0].get('phone').errors.invalidNumberPhone">The Phone lang should be 10</small>
+                <small class="text-danger" *ngIf="this.phones.controls[0].get('phone').errors.pattern">The Phone lang should Start with 0</small>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div>
+        <button  class="btn btn-outline-warning float-left" (click)="envoyer()"     >Envoyer</button>
+        <button class="btn btn-outline-success float-right" (click)="addPhoneNumber()" >Add Phone</button>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>
