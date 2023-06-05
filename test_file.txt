@@ -16,5 +16,4 @@ git pull origine second_branch
 get it from the second branch
 from the main
 written in the main branch
-git fetch merge
-
+git fetch for the second branch
