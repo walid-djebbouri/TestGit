@@ -17,3 +17,9 @@ get it from the second branch
 from the main
 written in the main branch
 git fetch for the second branch
+
+for testing merge here i'm in the new branch
+
+<<<< new branch >>>>
+
+<< new branch for rebase >>
