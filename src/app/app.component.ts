@@ -20,10 +20,7 @@ export class AppComponent implements OnInit , OnDestroy {
   }
   ngOnInit() {
     this.listUser = this.user.userSubject.subscribe(
-      (users: any[]) => {
-        console.log(users[2]) ;
-      }
-      );
+      (users: any[]) => {});
     this.user.envyerUser();
 
 

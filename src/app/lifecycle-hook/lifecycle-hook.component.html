@@ -1,0 +1,15 @@
+<ng-container>
+    <p>
+      lifecycle-hook works!
+    </p>
+  <button (click)="increment()" >Increment</button>
+  <br><br><br>
+  <h1>{{i}}</h1>
+  <br><br><br>
+  <app-lifecycle-child
+    [childTitle]="userName"
+    [display]="display"
+  ></app-lifecycle-child>
+
+</ng-container>
+
