@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14' # Spécifiez la version de Node.js si nécessaire
+          node-version: '18' # Spécifiez la version de Node.js si nécessaire
       
       - name: Install Angular CLI
         run: npm install -g @angular/cli
