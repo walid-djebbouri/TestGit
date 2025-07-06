@@ -24,6 +24,12 @@ export class AppareilComponent implements OnInit {
 
 
   ngOnInit() {
+
+    console.log('hello my friend 01');
+
+    console.log('hello my friend 02');
+    console.log('hello my friend 03');
+
     // this.data = this.observableTest();
     // this.data.subscribe(value => console.log(value));
     this.alive.next( true) ;
