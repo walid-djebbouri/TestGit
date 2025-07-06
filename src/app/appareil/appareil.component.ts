@@ -29,6 +29,8 @@ export class AppareilComponent implements OnInit {
 
     console.log('hello my friend 02');
     console.log('hello my friend 03');
+    console.log('hello my friend  conflict rebase .ts');
+
 
     // this.data = this.observableTest();
     // this.data.subscribe(value => console.log(value));
