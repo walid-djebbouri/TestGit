@@ -35,6 +35,7 @@ export class AppareilComponent implements OnInit {
     // this.data = this.observableTest();
     // this.data.subscribe(value => console.log(value));
     this.alive.next( true) ;
+    console.log('here i want to see a conflict rebase problem');
     this.test();
     this.subject.next(1992);
     setTimeout(() => {
