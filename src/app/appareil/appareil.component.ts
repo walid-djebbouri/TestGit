@@ -69,4 +69,8 @@ export class AppareilComponent implements OnInit {
     }, 5000);
     return of(x);
   }
+
+  public conflictTest(): void {
+    console.log('hello');
+  }
 }
