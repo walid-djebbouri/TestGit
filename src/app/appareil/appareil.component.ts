@@ -27,6 +27,7 @@ export class AppareilComponent implements OnInit {
 
     console.log('hello my friend 01');
 
+    console.log('hello my friend 02');
 
     // this.data = this.observableTest();
     // this.data.subscribe(value => console.log(value));
