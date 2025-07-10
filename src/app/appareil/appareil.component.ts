@@ -101,12 +101,6 @@ export class AppareilComponent implements OnInit {
   }
 
   public conflictTest05(): void {
-    console.log('hello');
-    let i = 0;
-    while ( i < 10) {
-      i++;
-    }
-    console.log('hello from');
-    console.log('hello from second-branch-for-test');
+
   }
 }
