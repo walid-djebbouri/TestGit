@@ -85,6 +85,11 @@ export class AppareilComponent implements OnInit {
     console.log('hello from second-branch-for-test');
   }
 
+  private conflictTest04(): void {
+    console.log('hello from');
+    console.log('hello from second-branch-for-test');
+  }
+
   public conflictTest02(): void {
     console.log('hello');
     let i = 0;
