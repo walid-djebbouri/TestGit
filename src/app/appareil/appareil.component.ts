@@ -35,6 +35,7 @@ export class AppareilComponent implements OnInit {
     // this.data = this.observableTest();
     // this.data.subscribe(value => console.log(value));
     this.alive.next( true) ;
+    console.log('here i want to see a conflict rebase problem');
     this.test();
     this.subject.next(1992);
     setTimeout(() => {
@@ -67,5 +68,13 @@ export class AppareilComponent implements OnInit {
       x = 1996;
     }, 5000);
     return of(x);
+  }
+
+  public conflictTest(): void {
+    console.log('hello');
+    for ( let i = 0 ; i < 10 ; i++) {
+          console.log(i);
+    }
+    console.log('hello from second_branch');
   }
 }
